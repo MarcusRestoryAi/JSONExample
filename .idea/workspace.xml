@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c31794d8-f780-4c1a-927f-a79f4e05f104" name="Changes" comment="Skapat 2 nya metoder, för att hämta JSON från fil samt API">
+    <list default="true" id="c31794d8-f780-4c1a-927f-a79f4e05f104" name="Changes" comment="Hämta data från IIS.at API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +59,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1678360444641</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Hämta data från IIS.at API">
+      <created>1678367237509</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1678367237509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +83,7 @@
     <MESSAGE value="Lagt till en ny SOut message" />
     <MESSAGE value="Skapat ett JSON Object och skrivit och hämtat data via den." />
     <MESSAGE value="Skapat 2 nya metoder, för att hämta JSON från fil samt API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Skapat 2 nya metoder, för att hämta JSON från fil samt API" />
+    <MESSAGE value="Hämta data från IIS.at API" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hämta data från IIS.at API" />
   </component>
 </project>
