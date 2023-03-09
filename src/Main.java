@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException, ParseException {
@@ -45,14 +46,30 @@ public class Main {
         System.out.println("Mitt namn är " + nameP2 + " och jag är " + ageP2 + " år gammal.");
     }
 
-    static void fetchJsonFromAPI() throws IOException {
+    static void fetchJsonFromAPI() throws IOException, ParseException {
         //Spara URL till API
         URL url = new URL("https://api.wheretheiss.at/v1/satellites/25544");
-
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+        //Sätta upp HTTPRequest inställningar
         conn.setRequestMethod("GET");
         conn.connect();
         if (conn.getResponseCode() == 200) System.out.println("Koppling lyckades");
-        else System.out.println("Koppling misslyckades");
+        else                             { System.out.println("Koppling misslyckades"); return; }
+
+        //Skapa StrBuilder och Scan object
+        StringBuilder strData = new StringBuilder();
+        Scanner scan = new Scanner(url.openStream());
+
+        //BYgger upp str med ISS data
+        while(scan.hasNext()) strData.append(scan.nextLine());
+        scan.close(); //Stänger kopplingen
+
+        System.out.println(strData);
+
+        //Skapar JSONObject av fetched data
+        JSONObject issData = (JSONObject) new JSONParser().parse(String.valueOf(strData));
+
+        System.out.println("Hastighet i Km: " + issData.get("velocity") + " Höjd över havet: " + issData.get("altitude"));
     }
 }
